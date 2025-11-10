@@ -1,4 +1,3 @@
-// formController.js
 const formController = (() => {
   const form = document.querySelector("form");
   const dialog = document.querySelector("dialog");
