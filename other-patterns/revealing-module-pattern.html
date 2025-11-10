@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles3.css" />
+  </head>
+  <body>
+    <dialog>
+      <div class="modal-images">
+        <img src="images/close-thick.svg" width="100px" height="100px" />
+        <img src="images/circle-outline.svg" width="90px" height="90px" />
+      </div>
+
+      <form method="dialog">
+        <div>
+          <label for="player1">X Player Name *</label>
+          <input type="text" id="player1" maxlength="18" required />
+        </div>
+        <div>
+          <label for="player1-avatar">X Player Avatar:</label>
+          <input
+            type="file"
+            accept=".jpg, .jpeg, .png, .webp"
+            id="player1-avatar"
+          />
+        </div>
+        <div>
+          <label for="player2">O Player Name *</label>
+          <input type="text" id="player2" maxlength="18" required />
+        </div>
+        <div>
+          <label for="player2-avatar">O Player Avatar:</label>
+          <input
+            type="file"
+            accept=".jpg, .jpeg, .png, .webp"
+            id="player2-avatar"
+          />
+        </div>
+
+        <button class="start-game-btn">Start Game</button>
+      </form>
+    </dialog>
+    <h1>Tic <span>Tac</span> Toe</h1>
+    <div class="main-container">
+      <div class="player-box player-1-box">
+        <div class="player-img player-img-1"></div>
+        <span class="player-name name-1">Tanjiro Kamado</span>
+        <span class="player-sign">X</span>
+      </div>
+
+      <div class="container">
+        <div class="box box-1" data-name="firstRow-firstCol-firstCross"></div>
+        <div class="box box-2" data-name="firstRow-secondCol"></div>
+        <div class="box box-3" data-name="firstRow-thirdCol-secondCross"></div>
+        <div class="box box-4" data-name="secondRow-firstCol"></div>
+        <div
+          class="box box-5"
+          data-name="secondRow-secondCol-firstCross-secondCross"
+        ></div>
+        <div class="box box-6" data-name="secondRow-thirdCol"></div>
+        <div class="box box-7" data-name="thirdRow-firstCol-secondCross"></div>
+        <div class="box box-8" data-name="thirdRow-secondCol"></div>
+        <div class="box box-9" data-name="thirdRow-thirdCol-firstCross"></div>
+      </div>
+
+      <div class="player-box player-2-box">
+        <div class="player-img player-img-2"></div>
+        <span class="player-name name-2">Akaza</span>
+        <span class="player-sign">O</span>
+      </div>
+    </div>
+
+    <div class="game-status-box">
+      <p>Player 1's turn to strike!</p>
+      <button type="button">Play Again</button>
+    </div>
+
+    <script src="script3.js"></script>
+  </body>
+</html>

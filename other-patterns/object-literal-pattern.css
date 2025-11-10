@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Reddit Sans", sans-serif;
+  background: #e6edf5;
+  min-height: 100vh;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.main-container {
+  margin-top: 3em;
+  padding: 0 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 140px;
+}
+
+h1 {
+  padding: 0 3em;
+  padding-top: 1em;
+}
+
+h1 span {
+  display: inline-block;
+  color: #ff4163;
+  text-transform: uppercase;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  justify-content: center;
+  /* gap: 1.2em; */
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  border-right: 8px solid #0d0d29;
+  border-bottom: 8px solid #0d0d29;
+  /* border-radius: 5px; */
+}
+
+.box:nth-child(3n) {
+  border-right: 0;
+  border-left: 8px solid #0d0d29;
+}
+
+.box:nth-child(3n + 2) {
+  border-right: 0;
+}
+
+.box:nth-child(7),
+.box:nth-child(8),
+.box:nth-child(9) {
+  border-bottom: 0;
+}
+
+/* .box:hover {
+  background-color: #a8e78e;
+} */
+
+.mark-X {
+  width: 80px;
+  height: 80px;
+}
+
+.mark-O {
+  width: 70px;
+  height: 70px;
+}
+
+dialog {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3.2em 2.5em;
+  padding-bottom: 4.5em;
+  background-image: linear-gradient(#a96ae3, #704bce);
+  color: #fff;
+  width: 45%;
+  border-radius: 1.5em;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 80%);
+}
+
+.modal-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-images img {
+  width: 130px;
+  height: 130px;
+}
+
+.modal-images img:last-child {
+  margin-left: -10px;
+  width: 115px;
+  height: 115px;
+}
+
+dialog form {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  column-gap: 2.5em;
+  row-gap: 1em;
+}
+
+input[type="file"] {
+  background: rgb(255 255 255 / 0.1);
+  cursor: pointer;
+  padding: 0.46em;
+}
+
+input[type="file"]:focus {
+  box-shadow: 2px 2px 5px rgb(11 11 11 / 20%);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #7127d2;
+  color: white;
+  padding: 0.3em 1em;
+  border: none;
+  border-radius: 4px;
+  margin-right: 0.8em;
+  cursor: pointer;
+}
+
+dialog form label {
+  display: block;
+}
+
+dialog form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.65em 1em;
+  margin-top: 0.5em;
+  border-radius: 5px;
+  border: 0;
+}
+
+dialog form input:focus {
+  outline: none;
+  box-shadow: 2px 2px 5px rgb(11 11 11 / 50%);
+}
+
+dialog button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  background-color: #e6fe6f;
+  color: black;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.8em 4em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5em;
+  box-shadow: 2px 3px 2px rgb(11 11 11 / 50%);
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+dialog button:hover {
+  background-color: #d4f044;
+}
+
+dialog button:active {
+  top: 2px;
+  box-shadow: 1px 1px 2px rgb(11 11 11 / 50%);
+}
+
+.player-box {
+  width: 300px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  justify-items: start;
+}
+
+.player-img {
+  width: 110px;
+  height: 110px;
+  background-color: #f5f6fb;
+  border-radius: 100%;
+  background-image: url("images/tanjiro.webp");
+  background-size: 175%;
+  background-repeat: no-repeat;
+  background-position: center 0px;
+
+  border: 5px solid #ff4163;
+  position: relative;
+}
+
+.player-img-2 {
+  background-image: url("images/akaza.webp");
+}
+
+.player-name {
+  font-size: 1.2rem;
+  background-color: #0d0d29;
+  color: white;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 0.5em 1em;
+  padding-left: 2.6em;
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -40px;
+  margin-top: 15px;
+}
+
+.player-sign {
+  background-color: #5b54bb;
+  font-weight: 900;
+  color: white;
+  border-radius: 100px;
+  width: 80px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.2em 0;
+  padding-left: 1.6em;
+  grid-row: 1;
+  grid-column: 2;
+  margin-top: 3.05em;
+  margin-left: -1.6em;
+}
+
+.game-status-box {
+  padding: 0 3em;
+  /* background-color: grey; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+  /* margin-left: 80px; */
+}
+
+.game-status-box p {
+  text-align: center;
+  background: #f34854;
+  color: #fcecef;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 0.8em 2em;
+  border-radius: 100px;
+  margin-bottom: 1.5em;
+}
+
+.game-status-box button {
+  display: none;
+  border: 0;
+  border-radius: 100px;
+  background: #5b54bb;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  padding: 0.8em 2em;
+  cursor: pointer;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.2);
+  transform: all 0.5s;
+}
+
+.game-status-box button:hover {
+  background-color: #704bce;
+}
